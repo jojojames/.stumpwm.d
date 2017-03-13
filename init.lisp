@@ -7,17 +7,17 @@
 ;; These programs are started by Unity/Ubuntu.
 ;; Run them here too for no unexpected hiccups.
 (mapcar (lambda (command)
-          (stumpwm::run-shell-command command))
+          (run-shell-command command))
         '("/usr/bin/vmware-user-suid-wrapper"
           "/usr/bin/gnome-software --gapplication-service"
           "/usr/lib/x86_64-linux-gnu/indicator-application/indicator-application-service"
           "/usr/bin/gnome-keyring-daemon --start --components=ssh"))
 
 ;; Change the keyboard repeat delay.
-(stumpwm::run-shell-command "xset r rate 250 60")
+(run-shell-command "xset r rate 250 60")
 
 ;; Swap Ctrl and Caps Lock
-(stumpwm::run-shell-command "/usr/bin/setxkbmap -option \"ctrl:swapcaps\"")
+(run-shell-command "/usr/bin/setxkbmap -option \"ctrl:swapcaps\"")
 
 ;; Scrolling in GTK apps.
 (run-shell-command "export GDK_CORE_DEVICE_EVENTS=1")
