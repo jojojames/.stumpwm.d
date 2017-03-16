@@ -27,6 +27,10 @@
                 (lambda ()
                   (run-shell-command "feh --bg-scale ~/.pictures/song.jpg")))
 
+;; Unify Primary and Clipboard copy/paste.
+(run-shell-command "autocutsel -fork &")
+(run-shell-command "autocutsel -selection PRIMARY -fork &")
+
 (require 'swank)
 (swank:create-server)
 
