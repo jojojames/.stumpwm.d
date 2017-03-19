@@ -32,7 +32,9 @@
 (run-shell-command "autocutsel -selection PRIMARY -fork &")
 
 (require 'swank)
-(swank:create-server)
+(swank:create-server :port 4005
+                     :style swank:*communication-style*
+                     :dont-close t)
 
 ;; Focus Follows Mouse
 (setf *mouse-focus-policy* :sloppy)
